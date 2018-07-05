@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*~
+env
+db.sqlite3
+/static
+.DS_Store
+.idea
+.env
+bot.log
+information.py
