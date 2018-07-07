@@ -1,3 +1,4 @@
+import telegram
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 
@@ -7,11 +8,25 @@ import information
 logging.basicConfig(format="%(levelname)-8s [%(asctime)s] %(message)s", level=logging.INFO, filename="bot.log")
 
 
+def start_working(bot, update):
+
+    custom_keyboard = [['/menu']]
+    reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+    bot.send_message(chat_id=update.message.chat_id, text='smth', reply_markup=reply_markup)
+
+    bot.send_message(chat_id=update.message.chat_id, text='<b>bold</b> <i>italic</i> <a '
+                                                          'href="http://google.com">link</a>.',
+                     parse_mode=telegram.ParseMode.HTML)
+
+    bot.send_message(chat_id=update.message.chat_id, text='Бич',
+                     parse_mode=telegram.ParseMode.HTML)
+
+
 def hello(bot, update):
 
-    keyboard = [[InlineKeyboardButton("Сырный бургер", callback_data='1'),
-                 InlineKeyboardButton("Бургер-Хуюргер", callback_data='2'),
-                 InlineKeyboardButton("БляБудуЭтотБургер", callback_data='3')]]
+    keyboard = [[InlineKeyboardButton("Сырный бургер", callback_data='1')],
+                 [InlineKeyboardButton("Бургер-Хуюргер", callback_data='2')],
+                 [InlineKeyboardButton("БляБудуЭтотБургер", callback_data='3')]]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
@@ -47,8 +62,8 @@ def button(bot, update):
         bot.edit_message_text(text="Цена: 333 рубля",
                               chat_id=query.message.chat_id,
                               message_id=query.message.message_id)
-        bot.send_photo(chat_id=query.message.chat_id, photo='http://burgergroup.ru/content/uploads/2017/10/Dvoynoy'
-                                                            '-Mesto-Burger-675x450.jpg')
+        bot.send_photo(chat_id=query.message.chat_id,photo='http://burgergroup.ru/content/uploads/2017/10/Dvoynoy'
+                                                           '-Mesto-Burger-675x450.jpg')
 
 
 def start_bot():
@@ -58,6 +73,9 @@ def start_bot():
     })
 
     dp = updater.dispatcher
+
+    start_handler = CommandHandler('start', start_working)
+    dp.add_handler(start_handler)
 
     hello_handler = CommandHandler('menu', hello)
     dp.add_handler(hello_handler)
