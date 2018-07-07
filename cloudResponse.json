@@ -1,0 +1,276 @@
+{
+  "title": "Вкусная мякотка",
+  "category": [
+    {
+      "title": "Бургеры",
+      "dishes": [
+        {
+          "title": "Бургер под номером!0",
+          "price": 201,
+          "picture": "https://placeholred.it/32x32",
+          "tags": [
+            "labore",
+            "ipsum",
+            "mollit"
+          ],
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 223
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 370
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 278
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 350
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 179
+            }
+          ]
+        },
+        {
+          "title": "Бургер под номером!1",
+          "price": 307,
+          "picture": "https://placeholred.it/32x32",
+          "tags": [
+            "quis",
+            "aliquip",
+            "ut"
+          ],
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 207
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 467
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 298
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 215
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 157
+            }
+          ]
+        },
+        {
+          "title": "Бургер под номером!2",
+          "price": 222,
+          "picture": "https://placeholred.it/32x32",
+          "tags": [
+            "elit",
+            "irure",
+            "quis"
+          ],
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 482
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 354
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 321
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 156
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 304
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Шаурма",
+      "dishes": [
+        {
+          "title": "Крученый рулет под номером 0",
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 155,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "laborum",
+                "fugiat",
+                "amet"
+              ]
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 446,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "magna",
+                "laborum",
+                "proident"
+              ]
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 343,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "aute",
+                "aute",
+                "mollit"
+              ]
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 209,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "dolore",
+                "sunt",
+                "mollit"
+              ]
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 319,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "commodo",
+                "incididunt",
+                "exercitation"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Крученый рулет под номером 1",
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 110,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "id",
+                "laboris",
+                "velit"
+              ]
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 466,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "laboris",
+                "dolor",
+                "labore"
+              ]
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 233,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "amet",
+                "culpa",
+                "aliqua"
+              ]
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 311,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "aliquip",
+                "laboris",
+                "culpa"
+              ]
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 370,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "sint",
+                "culpa",
+                "nulla"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Крученый рулет под номером 2",
+          "products": [
+            {
+              "title": "Продукт под номером!0",
+              "weight": 458,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "enim",
+                "ad",
+                "excepteur"
+              ]
+            },
+            {
+              "title": "Продукт под номером!1",
+              "weight": 203,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "aute",
+                "magna",
+                "Lorem"
+              ]
+            },
+            {
+              "title": "Продукт под номером!2",
+              "weight": 344,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "commodo",
+                "do",
+                "minim"
+              ]
+            },
+            {
+              "title": "Продукт под номером!3",
+              "weight": 412,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "et",
+                "eiusmod",
+                "dolore"
+              ]
+            },
+            {
+              "title": "Продукт под номером!4",
+              "weight": 330,
+              "picture": "https://placeholred.it/32x32",
+              "tags": [
+                "sit",
+                "tempor",
+                "irure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
