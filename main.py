@@ -11,36 +11,41 @@ logging.basicConfig(format="%(levelname)-8s [%(asctime)s] %(message)s", level=lo
 # TEMP SOLUTION FOR DEMO:
 with open('cloudResponse.json', 'r') as f:
     s = f.read()
-menu = parser(s)
+menu = Parser(s)
 categories = menu.getCategoriesList()
+
 
 def hello(bot, update):
     reply_markup = getKeyboard(categories)
     update.message.reply_text('Что же будет на этот раз? :', reply_markup=reply_markup)
 
-def dishMenu(category):
-    dishes_list = menu.getDishesList(category) 
+
+def dishMenu(bot, update, category):
+    dishes_list = menu.getDishesList(category)
     callback_data = [category + '.' + x for x in dishes_list]
     reply_markup = getKeyboard(dishes_list, callback_data)
-    update.message.reply_text('Как понять, что ты выбрал свое блюдо?' 
-            'Очень легко: они все твои ;-)',
-            reply_markup=reply_markup)
+    update.message.reply_text('Как понять, что ты выбрал свое блюдо?'
+                              'Очень легко: они все твои ;-)',
+                              reply_markup=reply_markup)
 
-def getDishDescription(title):
+
+def getDishDescription(bot, update, title):
     description = menu.getDishPage(title)
     pic = description.split('\n')[-1].split(': ')[-1]
     description = description.split('\n')[:-1]
-    bot.edit_message_text(text=description,
-                          chat_id=query.message.chat_id,
-                          message_id=query.message.message_id)
-    bot.send_photo(chat_id=query.message.chat_id, photo=pic)
+    bot.edit_message_text(text=description, chat_id=update.callback_query.message.chat_id)
+    bot.send_photo(chat_id=update.callback_query.message.chat_id, photo=pic)
 
-def getKeyboard(l, callback_data=l):
+
+def getKeyboard(l, callback_data=None):
+    if not callback_data:
+        callback_data = l
     keyboard = [[]]
     for i in range(len(l)):
         keyboard[0].append(InlineKeyboardButton(l[i], callback_data=callback_data[i]))
     reply_markup = InlineKeyboardMarkup(keyboard)
     return reply_markup
+
 
 def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Не знаю такой команды")
@@ -54,9 +59,9 @@ def reply(bot, update):
 def button(bot, update):
     query = update.callback_query
     if query.data in categories:
-        dishMenu(query.data)
-    if '.' in query.data: # category.dish_title need to make more pretty
-        getDishDescription(query.data)
+        dishMenu(bot, update, query.data)
+    if '.' in query.data:  # category.dish_title need to make more pretty
+        getDishDescription(bot, update, query.data)
 
 
 def start_bot():
