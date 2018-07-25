@@ -107,6 +107,8 @@
       "dishes": [
         {
           "title": "Крученый рулет под номером 0",
+          "price": 201,
+          "picture": "https://placeholred.it/32x32",
           "products": [
             {
               "title": "Продукт под номером!0",
@@ -162,6 +164,8 @@
         },
         {
           "title": "Крученый рулет под номером 1",
+          "price": 201,
+          "picture": "https://placeholred.it/32x32",
           "products": [
             {
               "title": "Продукт под номером!0",
@@ -217,6 +221,8 @@
         },
         {
           "title": "Крученый рулет под номером 2",
+          "price": 201,
+          "picture": "https://placeholred.it/32x32",
           "products": [
             {
               "title": "Продукт под номером!0",
