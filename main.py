@@ -34,6 +34,7 @@ def dishMenu(bot, update, category):
 def getDishDescription(bot, update, title):
     desc = menu.getDishPage(title)
     bot.send_message(chat_id=update.callback_query.message.chat_id, text=desc['composition'])
+    bot.send_photo(chat_id=update.callback_query.message.chat_id, photo=desc['pic'])
     keyboard = [[InlineKeyboardButton("Оплатить", callback_data='4242')]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     bot.send_message(chat_id=update.callback_query.message.chat_id,
