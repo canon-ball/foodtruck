@@ -6,14 +6,14 @@ from telegram import LabeledPrice, ShippingOption
 import logging
 import information
 
-from parser import Parser
+from json2message import Json2Message 
 
 logging.basicConfig(format="%(levelname)-8s [%(asctime)s] %(message)s", level=logging.INFO, filename="bot.log")
 
 # TEMP SOLUTION FOR DEMO:
 with open('cloudResponse.json', 'r') as f:
     s = f.read()
-menu = Parser(s)
+menu = Json2Message(s)
 categories = menu.getCategoriesList()
 
 

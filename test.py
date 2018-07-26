@@ -1,9 +1,9 @@
-from parser import Parser
+from json2message import Json2Message 
 
 with open('cloudResponse.json', 'r') as f:
     data = f.read()
 
-p = Parser(data)
+p = Json2Message(data)
 print(p.getDishesList('Бургеры'))
 print('=' * 80)
 print(p.getDishesList('Шаурма'))
