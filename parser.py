@@ -32,11 +32,14 @@ class Parser:
                 dish = d
         if not dish:
             return None
-        res = "<b>{0}</b>\n".format(dish['title'])
+        res = {}
+        res['title'] = dish['title']
+        composition = ""
         for c in dish['products']:
-            res += "{0}\n".format(c["title"])
-        res += "Цена: {0}\n".format(dish['price'])
-        res += "pic img : {0}".format(dish['picture'])
+            composition += "{0}\n".format(c["title"])
+        res['composition'] = composition
+        res['price'] = dish['price']
+        res['pic'] = dish['picture']
         return res
 
     # must be private

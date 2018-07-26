@@ -30,25 +30,18 @@ def dishMenu(bot, update, category):
                                                                          'Очень легко: они все твои ;-)',
                      reply_markup=reply_markup)
 
-    # bot.edit_message_text(text='Как понять, что ты выбрал свое блюдо?'
-    #                            'Очень легко: они все твои ;-)',
-    #                       chat_id=update.callback_query.message.chat_id,
-    #                       reply_markup=reply_markup)
-    # update.message.reply_text('Как понять, что ты выбрал свое блюдо?'
-    #                           'Очень легко: они все твои ;-)',
-    #                           reply_markup=reply_markup)
-
 
 def getDishDescription(bot, update, title):
     description = menu.getDishPage(title)
     pic = description.split('\n')[-1].split(': ')[-1]
     description = description.split('\n')[:-1]
-    bot.send_message(chat_id=update.callback_query.message.chat_id, text="Охуительный состав: Мясо хлеб и ноль приправ")
-    bot.send_photo(chat_id=update.callback_query.message.chat_id, photo='https://images.aif.ru/008/828'
-                                                                        '/655ed6060ce02d0bde852f0ce32feaea.jpg')
+    desc = menu.getDishPage(title)
+    bot.send_message(chat_id=update.callback_query.message.chat_id, text=desc['composition'])
+    bot.send_photo(chat_id=update.callback_query.message.chat_id, photo=desc['pic'])
     keyboard = [[InlineKeyboardButton("Оплатить", callback_data='4242')]]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    bot.send_message(chat_id=update.callback_query.message.chat_id, text="Цена: 399 рублей", reply_markup=reply_markup)
+    bot.send_message(chat_id=update.callback_query.message.chat_id,
+            text="Цена: {0} рублей".format(desc['price']), reply_markup=reply_markup)
 
 
 def getKeyboard(l, callback_data=None):
